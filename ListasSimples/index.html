@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    
+  <nav>
+   
+  </nav>
+    <div class="container section">
+        <table class="striped">
+            <!-- Manejo de categorías en la tabla -->
+            <thead>
+                <!-- Insertar 1 fila con categorías -->
+                <tr>
+                    <th>Fuente</th>
+                    <th>Valores de los nodos</th>
+                </tr>
+            </thead>
+            <!-- Registros de la tabla -->
+            <tbody>
+                <!-- fila 1: Muestra info de un sólo registro -->
+                <tr>
+                    <td>
+                        <label>Cargar valores por defecto</label>
+                    </td>
+                    <td>
+                        <output id="listaPorDefault"></output>
+                    </td>
+                </tr>
+                <!-- fila 2: Solicitar valores ingresados por el usuario -->
+                <tr>
+                    <td>
+                        <div class="input-field">
+                            <input type="text" name="nodos" id="nodos">
+                            <label for="nodos">Ingrese los valores separados por ","</label>
+                        </div>
+                    </td>
+                    <!-- Crear botón sin texto sólo icono -->
+                    
+                </tr>
+                <!-- fila 3 -->
+                <tr>
+                    <td>
+                        <!-- Crear botón para el cargue de multiples imagenes -->
+                        <div class="file-field input-field">
+                            <div class="btn">
+                                <span>Cargar imgs</span>
+                                <input type="file" name="files[]" id="files" multiple>
+                            </div>
+                            <!-- Muestra el nombre de las imagenes seleccionadas -->
+                            <div class="file-path-wrapper">
+                                <input type="text" class="file-path validate" id="rafael">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="btn"onclick="agregarImagenes() ">aceptar</div>
+                        </div>
+                    </td>
+                    <td>
+                        <output id="list"></output>
+                    </td>
+                </tr>
+                <!-- fila 4 -->
+                <tr>
+                    <td>
+                    
+                           <div class="file-field input-field">
+                               <div class="btn">
+                                   <span> cargar txt</span>
+                                    <input type="file" name=" myInput"id="myInput">
+                               </div>
+                               <div class="file-path-wrapper">
+                                   <input class=" file-path validate" type=" text">
+                                  
+                               </div>
+                           </div>
+                      
+                    </td>
+                    <td>
+                        <label>Contendio del archivo</label>
+                        <output id="ver"></output>
+                        <div class="class row">
+                           <div class="btn" onclick="cargueTexto()">
+                               <span>aceptar</span>
+                           </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Seccion del boton -->
+        <div class="center">
+             <a class="btn-floating btn-large waves-effect waves-light blue" onclick="agregarNumeros()">
+                <i class="material-icons">add</i>
+            </a>
+            <output id="nodosIngresados"></output>
+        </div>
+           
+        
+        <!-- Lista desplegable -->
+        <div class="section">
+            <div class="row">
+                <div class="col s8">
+                    <select class="browser-default"name="funcionSelected" id="funcionSelected">
+                        <option value="" disabled selected>Seleccione una opcion</option>
+                        <option value="1">anadir nodo al principio</option>
+                        <option value="2">anadir nodo al final</option>
+                        <option value="3">Eliminar nodo al principio</option>
+                        <option value="4">Eliminar nodo al final</option> <!-- inicio o final radio button lo mismo para el de abajo -->                  
+                        <option value="5">consultar valor nodo</option>
+                        <option value="6">Eliminar nodo por determinada posicion</option>
+                        <option value="7">Modificar valor de un nodo determinado</option>
+                        <option value="8">anadir nodo en determinada posicion</option>
+                        <option value="9">Invertir lista</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row center">
+                 <!-- parametros metodos listas simples -->
+                 <div class="col s8">
+                    <input type="text" name="valorN" id="valorN"><label for="valorN">Valor nodo</label>
+                </div>
+                <div class="col s4">
+                    <input type="number" name="posicionN" id="posicionN"><label for="posicionN">posicion nodo</label>
+                </div>
+            </div>
+        </div>
+        <!-- Seccion de aceptar y mostrar lista resultante -->
+        <div class="section">
+            <div class="row center">
+                <div class="col s12">
+                    <button class="btn waves-effect waves-light btn-large" onclick="showSelected()">Crear lista</button>
+                    <div class="row ">
+                        <label for="listaFinal">Lista resultante</label>
+                         <output id="listaFinal"></output>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js/funcionesListas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</html>
